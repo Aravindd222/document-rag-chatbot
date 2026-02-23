@@ -7,6 +7,8 @@ def get_reranker():
     global _model
     if _model is None:
         _model = CrossEncoder("BAAI/bge-reranker-large")
+        #want 4x faster but less accuracy that above
+        #_model = CrossEncoder("BAAI/bge-reranker-base")
     return _model
 
 
