@@ -1,14 +1,14 @@
-from pdfreader import PdfReader
+from pdfreader import read_pdf
 from chunker import chunk_pages
 from embedder import embed_chunks
 from vectorstore import store_in_pinecone
 from typing import List
 
 
-pdf_path = ""
+pdf_path = "./resources/IBM_Business_Conduct_Guidelines.pdf"
 def run():
     #Read PDF and extract text
-    pages = PdfReader(pdf_path)
+    pages = read_pdf(pdf_path)
 
     #Chunk data into smaller pieces
     chunks = chunk_pages(pages)
